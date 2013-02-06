@@ -1,0 +1,17 @@
+{{$log.info('json-view.svg $parent.json: ', $parent.json);}}
+        {{}}
+        {{$log.info('json-view.svg json.children.length: ', json.children.length);}}
+
+<div id="'partials/includes/json-view.svg'">
+    hier2 {{json.id}} en {{json.children}}
+    <svg xmlns="http://www.w3.org/2000/svg" version="1.1">
+        <rect stroke="black" id="User" height="40" width="90" y="0" x="0" stroke-width="3" fill="green"/>
+        <text x="15" y="25" fill="black" font-size="24">id: {{json.id}}</text>
+    </svg>
+</div>
+
+<div ng-show="json.children.length>0" ng-repeat="json in json.children">
+    hier {{json.id}} en {{json.children}}
+    {{console.log('test')}}
+    <ng-include src="'partials/includes/json-include-view.html'"/>
+</div>
